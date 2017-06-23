@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-//App Components
 import {
   BrowserRouter,
   Route,

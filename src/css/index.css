@@ -27,7 +27,7 @@ h1, a {
   color: #fff;
 }
 
-.main-nav .selected,
+.main-nav .active,
 .main-nav a:hover {
   background-color: #275270;
 }
