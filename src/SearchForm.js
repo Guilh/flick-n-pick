@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class SearchForm extends Component {
 
   handleSubmit = (e) => {
+    const { history } = this.props;
     e.preventDefault();
-    this.props.history.push(this.query.value);
+    history.push(this.query.value);
     e.currentTarget.reset();
   }
   
