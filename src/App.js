@@ -19,7 +19,7 @@ class App extends Component {
             <Route component={SearchForm} />
             <Nav/>
             <Switch>
-              <Route exact path="/" render={ () => <PhotoContainer data={'/cars'} /> } />
+              <Route exact path="/" render={ () => <PhotoContainer data={'cats'} /> } />
               <Route path="/:category" render={ ({match}) => <PhotoContainer data={match.params.category} title={match.params.category} /> } /> 
             </Switch>
           </div>
