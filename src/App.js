@@ -20,7 +20,7 @@ class App extends Component {
             <Nav/>
             <Switch>
               <Route exact path="/" render={ () => <PhotoContainer data={'/cars'} /> } />
-              <Route path="/:category" render={ ({match}) => <PhotoContainer data={match.url} title={match.url} /> } /> 
+              <Route path="/:category" render={ ({match}) => <PhotoContainer data={match.params.category} title={match.params.category} /> } /> 
             </Switch>
           </div>
         </BrowserRouter>

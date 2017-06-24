@@ -23,8 +23,7 @@ class PhotoContainer extends Component {
   }
 
   fetch = (query) => {
-    const text = query.split('/')[1];
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${text}&per_page=25&format=json&nojsoncallback=1`)
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&per_page=25&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({ 
           photos: response.data.photos.photo,
@@ -39,6 +38,7 @@ class PhotoContainer extends Component {
   render() {
     return (
       <div className="photo-container">
+        <h2>{this.props.title}</h2>
         {
           (this.state.loading)
            ? <p>Loading...</p>
