@@ -36,7 +36,7 @@ class PhotoContainer extends Component {
 
   render() {
     const { title } = this.props;
-    console.log(this.state.photos)
+    console.log(title)
     return (
       <div className="photo-container">
         <h2>{ this.state.photos.length ? title : ''}</h2>

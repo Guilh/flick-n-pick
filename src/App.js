@@ -18,7 +18,7 @@ class App extends Component {
             <Route component={SearchForm} />
             <Nav/>
             <Switch>
-              <Route exact path="/" render={ () => <PhotoContainer data={'cats'} /> } />
+              <Route exact path="/" render={ () => <h2>Search for Images</h2> } />
               <Route path="/:category" render={ ({match}) => <PhotoContainer data={match.params.category} title={match.params.category} /> } />
             </Switch>
           </div>
