@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PhotoList from './PhotoList';
 import { apiKey } from './config.js';
-import NotFound from './NotFound';
 
 class PhotoContainer extends Component {
 
@@ -10,7 +9,7 @@ class PhotoContainer extends Component {
     photos: [],
     loading: true
   }
-   
+
   componentDidMount() {
     this.fetch(this.props.data);
   }
@@ -23,27 +22,29 @@ class PhotoContainer extends Component {
   }
 
   fetch = (query) => {
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&per_page=25&format=json&nojsoncallback=1`)
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&per_page=16&format=json&nojsoncallback=1`)
       .then(response => {
-        this.setState({ 
+        this.setState({
           photos: response.data.photos.photo,
-          loading: false 
+          loading: false
         });
-      })  
+      })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
-      });  
+      });
   }
 
   render() {
+    const { title } = this.props;
+    console.log(this.state.photos)
     return (
       <div className="photo-container">
-        <h2>{this.props.title}</h2>
+        <h2>{ this.state.photos.length ? title : ''}</h2>
         {
           (this.state.loading)
            ? <p>Loading...</p>
            : <PhotoList data={this.state.photos} />
-        }        
+        }
       </div>
     )
   }

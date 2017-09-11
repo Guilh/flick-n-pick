@@ -7,17 +7,17 @@ const PhotoList = (props) => {
   let pics;
 
   if (results.length) {
-    pics = results.map(pic => <Photo farm={pic.farm} 
-                                     id={pic.id} 
+    pics = results.map(pic => <Photo farm={pic.farm}
+                                     id={pic.id}
                                      key={pic.id}
                                      secret={pic.secret}
-                                     server={pic.server} />);    
+                                     server={pic.server} />);
   } else {
     pics = <NotFound />
-  } 
+  }
   return (
     <ul>
-      {pics}    
+      {pics}
     </ul>
   );
 }
