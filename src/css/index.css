@@ -26,10 +26,12 @@ a {
 }
 
 .search-form button {
+  outline: none;
   background-color: #438bbd;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.5em 0.5em 0;
+  cursor: pointer;
 }
 
 input {
@@ -56,7 +58,8 @@ input {
 }
 
 .main-nav .active,
-.main-nav a:hover {
+.main-nav a:hover,
+.search-form button:hover {
   background-color: #275270;
 }
 
