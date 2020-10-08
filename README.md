@@ -1,1 +1,3 @@
-#### A Test Project
+#### A React Gallery
+
+A fun React gallery project for students!
