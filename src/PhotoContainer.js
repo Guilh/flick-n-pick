@@ -35,12 +35,11 @@ class PhotoContainer extends Component {
   }
 
   render() {
-    const { title } = this.props;
     return (
       <div className="photo-container">
-        <h2>{ this.state.photos.length ? title : ''}</h2>
+        <h2>{this.props.title}</h2>
         {
-          (this.state.loading)
+          this.state.loading
            ? <p>Loading...</p>
            : <PhotoList data={this.state.photos} />
         }
